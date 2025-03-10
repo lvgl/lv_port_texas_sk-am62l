@@ -1,5 +1,5 @@
 {
-    "name": "TI SK-AM62B-P1",
+    "name": "TI SK-AM62L",
     "maintainer": "LVGL",
     "hostOperatingsystem": [
         "Linux"
@@ -12,22 +12,21 @@
         "chipVendor": "TI",
         "manufacturer": "TI",
         "specs": {
-            "MPU": "AM625 with Quad 64-bit Arm® Cortex®-A53 @1.4GHz",
-            "MCU": "Arm® Cortex®-M4F MCU",
-            "RAM": "2 GB DDR4 16-Bit data bus with inline ECC (1600 MT/s)",
+            "MPU": "AM625 with Dual 64-bit Arm® Cortex®-A53 @1.25GHz",
+            "RAM": "2 GB DDR4 16-Bit data bus (1600 MT/s)",
             "Flash": "Micro SD Card",
-            "GPU": "PowerVR"
+            "GPU": "No GPU"
         }
     },
-    "description": "The Texas Instruments SK-AM62B-P1 starter kit (SK) evaluation module (EVM) is a stand-alone test and development platform built around the AM62x system-on-a-chip (SoC). AM62x processors are comprised of a quad-core 64-bit Arm®-Cortex®-A53 microprocessor and single-core Arm Cortex-M4F MCU. It features an HDMI port for up to 2K 60fps displays and two ethernet ports. It has an embedded PowerVR GPU",
+    "description": "The Texas Instruments SK-AM62L starter kit (SK) evaluation module (EVM) is a stand-alone test and development platform built around the AM62L system-on-a-chip (SoC). AM62L processor is comprised of a dual-core 64-bit Arm®-Cortex®-A53 microprocessor. It features an HDMI port for up to 2K 60fps displays and two ethernet ports. It has no GPU yet is fast with LVGL software rendering.",
     "shortDescription": "Powerful Texas Instruments Cortex®-A53 based device for embedded Linux.",
-    "urlToClone": "https://github.com/lvgl/lv_port_texas_sk-am62b-p1.git",
+    "urlToClone": "https://github.com/lvgl/lv_port_texas_sk-am62l.git",
     "logos": [
         "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/texas_instruments/logo.svg"
     ],
     "branches": [
         "release/v9.2"
     ],
-    "getStartedInstructions": "1. Open the project folder and update the submodules: `git submodule update --init --recursive` \n2. Follw the guide in the [README](https://github.com/lvgl/lv_port_texas_sk-am62b-p1/blob/master/README.md#getting-started)",
+    "getStartedInstructions": "1. Open the project folder and update the submodules: `git submodule update --init --recursive` \n2. Follw the guide in the [README](https://github.com/lvgl/lv_port_texas_sk-am62l/blob/master/README.md#getting-started)",
     "settings": []
 }

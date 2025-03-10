@@ -1,61 +1,61 @@
-# LVGL ported to AM62B-P1 (TI)
+# LVGL ported to AM62L (TI)
 
 ## Overview
 
-This guide provides steps to setup the SK-AM62B-P1 and to cross-compile an LVGL application to run it the target.
+This guide provides steps to setup the SK-AM62L and to cross-compile an LVGL application to run it on the target.
 
 ## Buy
 
-You can purchase the SK-AM62B-P1 board from [TI website](https://www.ti.com/tool/SK-AM62B-P1). Check out the product specification in the [product folder](https://www.ti.com/product/AM625)!
+Coming soon.
 
 
 ## Benchmark
 
 The default buffering is fbdev.
 
-**Frame buffer, 1 thread**
+**Frame buffer, 32 bit color depth, 1 thread**
 
 | Name                      | Avg. CPU | Avg. FPS | Avg. time | render time | flush time |
-| :------------------------ | -------- | -------- | --------- | ----------- | ---------- |
-| Empty screen              | 37.00%   | 24       | 14        | 5           | 9          |
-| Moving wallpaper          | 86.00%   | 15       | 57        | 48          | 9          |
-| Single rectangle          | 14.00%   | 28       | 1         | 1           | 0          |
-| Multiple rectangles       | 35.00%   | 28       | 10        | 6           | 4          |
-| Multiple RGB images       | 79.00%   | 29       | 27        | 18          | 9          |
-| Multiple ARGB images      | 70.00%   | 29       | 22        | 13          | 9          |
-| Rotated ARGB images       | 85.00%   | 23       | 36        | 27          | 9          |
-| Multiple labels           | 73.00%   | 27       | 24        | 15          | 9          |
-| Screen sized text         | 88.00%   | 18       | 48        | 39          | 9          |
-| Multiple arcs             | 75.00%   | 28       | 24        | 15          | 9          |
-| Containers                | 44.00%   | 27       | 12        | 10          | 2          |
-| Containers with overlay   | 88.00%   | 15       | 57        | 48          | 9          |
-| Containers with opa       | 72.00%   | 22       | 31        | 26          | 5          |
-| Containers with opa_layer | 91.00%   | 15       | 58        | 49          | 9          |
-| Containers with scrolling | 86.00%   | 26       | 31        | 22          | 9          |
-| Widgets demo              | 30.00%   | 24       | 14        | 11          | 3          |
-| All scenes avg.           | 65.00%   | 23       | 29        | 22          | 7          |
+| :------------------------ | -------: | -------: | --------: | ----------: | ---------: |
+| Empty screen              | 40%      | 26       | 14        | 4           | 10         |
+| Moving wallpaper          | 70%      | 29       | 25        | 15          | 10         |
+| Single rectangle          | 17%      | 29       | 0         | 0           | 0          |
+| Multiple rectangles       | 23%      | 29       | 7         | 2           | 5          |
+| Multiple RGB images       | 63%      | 30       | 19        | 9           | 10         |
+| Multiple ARGB images      | 81%      | 29       | 23        | 13          | 10         |
+| Rotated ARGB images       | 98%      | 24       | 39        | 29          | 10         |
+| Multiple labels           | 99%      | 29       | 28        | 18          | 10         |
+| Screen sized text         | 96%      | 20       | 47        | 37          | 10         |
+| Multiple arcs             | 93%      | 29       | 26        | 16          | 10         |
+| Containers                | 90%      | 23       | 33        | 27          | 6          |
+| Containers with overlay   | 99%      | 12       | 71        | 61          | 10         |
+| Containers with opa       | 99%      | 13       | 58        | 49          | 9          |
+| Containers with opa_layer | 99%      | 9        | 87        | 77          | 10         |
+| Containers with scrolling | 99%      | 14       | 58        | 49          | 9          |
+| Widgets demo              | 31%      | 25       | 15        | 13          | 2          |
+| All scenes avg.           | 74%      | 23       | 34        | 26          | 8          |
 
-**Frame buffer, 4 threads**
+**Frame buffer, 32 bit color depth, 2 threads**
 
 | Name                      | Avg. CPU | Avg. FPS | Avg. time | render time | flush time |
-| ------------------------- | -------- | -------- | --------- | ----------- | ---------- |
-| Empty screen              | 37.00%   | 24       | 14        | 5           | 9          |
-| Moving wallpaper          | 80.00%   | 28       | 28        | 19          | 9          |
-| Single rectangle          | 11.00%   | 28       | 1         | 1           | 0          |
-| Multiple rectangles       | 37.00%   | 29       | 12        | 8           | 4          |
-| Multiple RGB images       | 54.00%   | 27       | 19        | 10          | 9          |
-| Multiple ARGB images      | 56.00%   | 28       | 18        | 9           | 9          |
-| Rotated ARGB images       | 66.00%   | 29       | 21        | 12          | 9          |
-| Multiple labels           | 56.00%   | 28       | 17        | 8           | 9          |
-| Screen sized text         | 75.00%   | 27       | 25        | 16          | 9          |
-| Multiple arcs             | 56.00%   | 28       | 17        | 8           | 9          |
-| Containers                | 36.00%   | 27       | 10        | 8           | 2          |
-| Containers with overlay   | 83.00%   | 22       | 36        | 27          | 9          |
-| Containers with opa       | 57.00%   | 28       | 16        | 14          | 2          |
-| Containers with opa_layer | 77.00%   | 24       | 31        | 26          | 5          |
-| Containers with scrolling | 71.00%   | 28       | 23        | 14          | 9          |
-| Widgets demo              | 29.00%   | 26       | 11        | 8           | 3          |
-| All scenes avg.           | 55.00%   | 26       | 18        | 12          | 6          |
+| :------------------------ | -------: | -------: | --------: | ----------: | ---------: |
+| Empty screen              | 39%      | 26       | 14        | 4           | 10         |
+| Moving wallpaper          | 70%      | 30       | 24        | 14          | 10         |
+| Single rectangle          | 15%      | 29       | 0         | 0           | 0          |
+| Multiple rectangles       | 25%      | 29       | 8         | 3           | 5          |
+| Multiple RGB images       | 63%      | 29       | 19        | 9           | 10         |
+| Multiple ARGB images      | 80%      | 29       | 23        | 13          | 10         |
+| Rotated ARGB images       | 85%      | 29       | 28        | 18          | 10         |
+| Multiple labels           | 90%      | 29       | 24        | 14          | 10         |
+| Screen sized text         | 94%      | 28       | 32        | 22          | 10         |
+| Multiple arcs             | 89%      | 29       | 25        | 15          | 10         |
+| Containers                | 81%      | 26       | 24        | 21          | 3          |
+| Containers with overlay   | 99%      | 13       | 63        | 53          | 10         |
+| Containers with opa       | 99%      | 15       | 52        | 42          | 10         |
+| Containers with opa_layer | 99%      | 9        | 90        | 80          | 10         |
+| Containers with scrolling | 99%      | 16       | 53        | 43          | 10         |
+| Widgets demo              | 32%      | 25       | 15        | 13          | 2          |
+| All scenes avg.           | 72%      | 24       | 30        | 22          | 8          |
 
 The other configurations are:
 
@@ -64,11 +64,9 @@ The other configurations are:
 
 Any of these buffering strategies can be used with multiple threads to render the frames.
 
-Check out SK-AM62B-P1 in action, running LVGL's benchmark demo:
+Check out SK-AM62L in action, running LVGL's benchmark demo:
 
-<a href="https://www.youtube.com/watch?v=fgpnzjSEyWM">
-    <img src="https://github.com/user-attachments/assets/38d82d53-9240-4d7b-aab4-e1d07f7074f6" width="50%" alt="image">
-</a>
+Coming soon.
 
 ## Specification
 
@@ -76,20 +74,19 @@ Check out SK-AM62B-P1 in action, running LVGL's benchmark demo:
 
 -   **MCU**:
 
-    -   AM625 with Quad 64-bit Arm Cortex-A53 up to 1.4GHz
-    -   1 Arm Cortex-M4F
+    -   AM625 with Dual 64-bit Arm Cortex-A53 up to 1.25GHz
 
 -   **RAM**: 2GB DDR4
 
-    -   16-bits data bus with inline EEC
+    -   16-bits data bus
     -   Supports speeds up to 1600 MT/s
 
--   **Flash**: 32GB SD
--   **GPU**: PowerVR
+-   **Flash**: Micro SD Card
+-   **GPU**: **No GPU**
 
 ### Display
 
--   **Screen**: HDMI 1920x1080 touchscreen
+-   **Screen**: HDMI 1920x1080 @ 60fps touchscreen
 
 ### Connectivity
 
@@ -100,43 +97,22 @@ Check out SK-AM62B-P1 in action, running LVGL's benchmark demo:
 -   Onboard XDS110 Joint Test Action Group (JTAG) emulator
 -   4 universal asynchronous receiver-transmitters (UARTs) via USB 2.0-B
 -   Ethernet
+-   Headphone jack
 
 ## Getting started
 
 ### Hardware setup
 
-This [document](https://dev.ti.com/tirex/content/tirex-product-tree/am62x-devtools/docs/am62x_skevm_quick_start_guide.html) from TI provides detailed information for the hardware setup
+Coming soon.
 
--   Connect to the board the following:
-
-    -   UART
-    -   Power
-    -   Screen (HDMI)
-    -   Ethernet (Connect the board to the same LAN the host is, the board obtains an IP address from DHCP)
-
--   SD card is needed to flash the image.
-
-    -   Follow the [guide](https://dev.ti.com/tirex/content/tirex-product-tree/am62x-devtools/docs/am62x_skevm_quick_start_guide.html) to download a pre-built `.wic` image
-
-    -   Follow this [guide](https://software-dl.ti.com/processor-sdk-linux/esd/AM62X/09_01_00_08/exports/docs/linux/Overview_Building_the_SDK.html) to build the image with Yocto
-        -   A tutorial to get lvgl recipe setup on Yocto is provided in [LVGL official documentation - Yocto](https://docs.lvgl.io/master/details/integration/os/yocto/lvgl_recipe.html)
-
--   If there are problems encountered flashing the SD card with BalenaEtcher as mentioned in the documentation, use this command instead:
-
-    ```bash
-    # Mount the SD on your system and find where it was mounter (e.g.: sda, sdb)
-    sudo dd if=path/to/am62-image.wic of=/dev/sdX bs=4M status=progress conv=fsync
-    ```
-
--   The demo application should be displayed on the screen.
 
 ### Software setup
 
-This guide was tested on Ubuntu 22.04 host.
+This guide was tested on Ubuntu 20.04 host.
 
 #### Install docker
 
--   Follow this [tutorial](/https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04) to install and setup docker on your system.
+-   Follow this [tutorial (Ubuntu 22.04)](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04) [(Ubuntu 20.04)](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04) to install and setup docker on your system.
 
 -   Support to run arm64 docker containers on the host:
 
@@ -156,7 +132,7 @@ sudo apt install picocom nmap
 Clone the repository:
 
 ```bash
-git clone --recurse-submodules https://github.com/lvgl/lv_port_texas_sk-am62b-p1.git
+git clone --recurse-submodules https://github.com/lvgl/lv_port_texas_sk-am62l.git
 ```
 
 **IMPORTANT**: 
@@ -170,16 +146,17 @@ git clone --recurse-submodules https://github.com/lvgl/lv_port_texas_sk-am62b-p1
   lv_demo_benchmark();
   ```
 
-- The default lv_conf.h might not be the best configuration for the board. Feel free to replace the default lv_conf.h with one of the provided configurations in `lv_conf_example` folder.
+- The default lv_conf.h might not be the best configuration for the board. Feel free to replace the default lv_conf.h with one generated from one of the .defaults files in in `lv_conf_example` folder.
 
   ```bash
-  cp lv_conf_example/lv_conf_fb_4_threads.h lv_port_linux/lv_conf.h
+  cd lv_port_linux
+  python3 lvgl/scripts/generate_lv_conf.py --defaults ../lv_conf_example/lv_conf_fb_2_threads.defaults
   ```
 
 Build the docker image and the lvgl benchmark application:
 
 ```bash
-cd lv_port_texas_sk-am62b-p1
+cd lv_port_texas_sk-am62l
 ./scripts/docker_setup.sh --create-image
 ./scripts/docker_setup.sh --build-app
 ```
@@ -234,7 +211,14 @@ Run the executable on the target:
 
 Some configurations are provided in the folder `lvgl_conf_example` .
 
-The default configuration used is lv_conf_fb_4_threads.h. To change the configuration, modify the `lv_port_linux/lv_conf.h` file with the desired configuration.
+The default configuration used is lv_conf_fb_1_thread.defaults. To change the configuration, modify the `lv_port_linux/lv_conf.h` file with the desired configuration.
+
+You can also edit any of the .defaults files and generate a new lv_conf.h based on it.
+
+```bash
+cd lv_port_linux
+python3 lvgl/scripts/generate_lv_conf.py --defaults ../lv_conf_example/lv_conf_fb_1_thread.defaults
+```
 
 ### Start with your own application
 
@@ -303,7 +287,7 @@ export XDG_RUNTIME_DIR=/run/user/1000
 CMake may have troubles with CMakeLists.txt changes with some variables setup. If there is any problem building, try to clean the build folder:
 
 ```bash
-rm -rf lv_port_linux/build-arm64
+rm -rf lv_port_linux/build-arm64* lv_port_linux/bin
 ```
 
 ## Contribution and Support
