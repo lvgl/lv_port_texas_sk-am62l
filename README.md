@@ -66,7 +66,9 @@ Any of these buffering strategies can be used with multiple threads to render th
 
 Check out SK-AM62L in action, running LVGL's benchmark demo:
 
-Coming soon.
+<a href="https://www.youtube.com/watch?v=F9qKCQL7aJg">
+    <img src="https://github.com/user-attachments/assets/70ecfd20-d971-4a2b-ad5f-677d5b248a24" width="50%" alt="image">
+</a>
 
 ## Specification
 
