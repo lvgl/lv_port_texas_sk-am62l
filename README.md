@@ -1,4 +1,4 @@
-# LVGL ported to AM62L (TI)
+# LVGL ported to AM62L (Texas Instruments)
 
 ## Overview
 
@@ -66,7 +66,9 @@ Any of these buffering strategies can be used with multiple threads to render th
 
 Check out SK-AM62L in action, running LVGL's benchmark demo:
 
-Coming soon.
+<a href="https://www.youtube.com/watch?v=F9qKCQL7aJg">
+    <img src="https://github.com/user-attachments/assets/47b767bf-2372-44ed-9a30-fa46dbd8b088" width="50%" alt="image">
+</a>
 
 ## Specification
 
