@@ -8,10 +8,15 @@ This guide provides steps to setup the SK-AM62L and to cross-compile an LVGL app
 
 Coming soon.
 
-
 ## Benchmark
 
 The default buffering is fbdev.
+
+Check out SK-AM62L in action, running LVGL's benchmark demo:
+
+<a href="https://www.youtube.com/watch?v=F9qKCQL7aJg">
+    <img src="https://github.com/user-attachments/assets/47b767bf-2372-44ed-9a30-fa46dbd8b088" width="75%" alt="image">
+</a>
 
 **Frame buffer, 32 bit color depth, 1 thread**
 
@@ -63,12 +68,6 @@ The other configurations are:
 -   Wayland
 
 Any of these buffering strategies can be used with multiple threads to render the frames.
-
-Check out SK-AM62L in action, running LVGL's benchmark demo:
-
-<a href="https://www.youtube.com/watch?v=F9qKCQL7aJg">
-    <img src="https://github.com/user-attachments/assets/47b767bf-2372-44ed-9a30-fa46dbd8b088" width="50%" alt="image">
-</a>
 
 ## Specification
 
