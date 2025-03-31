@@ -1,5 +1,5 @@
 {
-    "name": "TI SK-AM62L",
+    "name": "Texas Instruments SK-AM62L",
     "maintainer": "LVGL",
     "hostOperatingsystem": [
         "Linux"
@@ -9,8 +9,8 @@
         "Buildroot"
     ],
     "hardware": {
-        "chipVendor": "TI",
-        "manufacturer": "TI",
+        "chipVendor": "Texas Instruments",
+        "manufacturer": "Texas Instruments",
         "specs": {
             "MPU": "AM625 with Dual 64-bit Arm® Cortex®-A53 @1.25GHz",
             "RAM": "2 GB DDR4 16-Bit data bus (1600 MT/s)",

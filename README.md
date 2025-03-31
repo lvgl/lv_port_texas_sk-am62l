@@ -1,4 +1,4 @@
-# LVGL ported to AM62L (TI)
+# LVGL ported to AM62L (Texas Instruments)
 
 ## Overview
 
