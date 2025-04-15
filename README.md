@@ -187,7 +187,7 @@ Run the executable on the target:
 -   Then transfer the executable on the board:
 
     ```bash
-    scp lv_port_linux/bin/lvgl-app root@<BOARD_IP>:/root
+    scp lv_port_linux/bin/lvglsim root@<BOARD_IP>:/root
     ```
 
 -   Start the application
