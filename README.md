@@ -199,7 +199,7 @@ Run the executable on the target:
     
     export LV_LINUX_FBDEV_DEVICE=/dev/fb1
     
-    ./lvgl-app
+    ./lvglsim
     ```
 
 ### Change configuration
