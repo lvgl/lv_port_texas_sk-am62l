@@ -158,9 +158,11 @@ Build the docker image and the lvgl benchmark application:
 
 ```bash
 cd lv_port_texas_sk-am62l
-./scripts/docker_setup.sh --create-image
-./scripts/docker_setup.sh --build-app
+./native_build/scripts/docker_setup.sh --create-image
+./native_build/scripts/docker_setup.sh --build-app
 ```
+
+Note: Use the same commands `./arm_build/scripts/docker_setup.sh` to build the app on an simulated Arm environment. It's required to use DRM or Wayland. 
 
 Run the executable on the target:
 
@@ -194,14 +196,6 @@ Run the executable on the target:
 
     ```bash
     ssh root@<BOARD_IP>
-    
-    ## stop default presentation screen if it is running
-    systemctl stop ti-apps-launcher
-    ######################################
-    ## WARNING: do not stop these services if using wayland demo
-    systemctl stop weston.socket
-    systemctl stop weston.service
-    ######################################
     
     export LV_LINUX_FBDEV_DEVICE=/dev/fb1
     

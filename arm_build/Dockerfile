@@ -23,4 +23,4 @@ RUN apt-get update && \
 # Verify that GCC, G++, and CMake are installed
 RUN gcc --version && g++ --version && cmake --version
 
-CMD ["/app/scripts/build_app.sh"]
+CMD ["/app/arm_build/scripts/build_app.sh"]
