@@ -1,18 +1,18 @@
-# LVGL ported to AM62L (Texas Instruments)
+# LVGL ported to TMDS62LEVM (Texas Instruments)
 
 ## Overview
 
-This guide provides steps to setup the SK-AM62L and to cross-compile an LVGL application to run it on the target.
+This guide provides steps to setup the TMDS62LEVM and to cross-compile an LVGL application to run it on the target.
 
 ## Buy
 
-Coming soon.
+You can purchase an TMDS62LEVM from https://www.ti.com/tool/TMDS62LEVM
 
 ## Benchmark
 
 The default buffering is fbdev.
 
-Check out SK-AM62L in action, running LVGL's benchmark demo:
+Check out TMDS62LEVM in action, running LVGL's benchmark demo:
 
 <a href="https://www.youtube.com/watch?v=F9qKCQL7aJg">
     <img src="https://github.com/user-attachments/assets/47b767bf-2372-44ed-9a30-fa46dbd8b088" width="75%" alt="image">
